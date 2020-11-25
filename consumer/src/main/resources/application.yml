@@ -1,0 +1,15 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: comsumer-server
+#随机访问
+#provider-server:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#权重访问
+provider-server:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.joe.config.NacosWeightedRule
+rocketmq:
+  name-server: 192.168.0.43:9876

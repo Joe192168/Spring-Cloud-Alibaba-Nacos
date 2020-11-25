@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: provider-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        #sentinel 默认是8080
+        dashboard: localhost:8080
+      #手动关闭链路
+      filter:
+        enabled: false
+  resources:
+    static-locations: classpath:/
+#所有的请求接口进行开放
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+rocketmq:
+  name-server: 192.168.0.43:9876
+  producer:
+    group: myGroup

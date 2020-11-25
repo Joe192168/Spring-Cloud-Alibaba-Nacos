@@ -1,0 +1,22 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    #通过网关映射注册中心里的其他服务
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+       #nacos已经自动映射，就不需要配置
+#      routes:
+#        - id: provider_route
+#          uri: http://localhost:8081
+#          predicates:
+#            - Path=/provider/**
+#          filters:
+#            - StripPrefix=1
