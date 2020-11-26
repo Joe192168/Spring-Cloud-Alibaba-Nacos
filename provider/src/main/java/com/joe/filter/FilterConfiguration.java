@@ -3,11 +3,12 @@ package com.joe.filter;
 import com.alibaba.csp.sentinel.adapter.servlet.CommonFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * 过滤器链路
  */
-//@Configuration
+@Configuration
 public class FilterConfiguration {
 
     @Bean
